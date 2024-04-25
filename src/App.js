@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Accueil from "./pages/Acceuil";
+import Apropos from "./pages/Apropos";
+import Erreur from "./pages/Erreur";
+import Footer from "./composants/Footer";
+import ContentCard from "./composants/CardContent";
+import Donnees from "./data.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="font">
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/Apropos" element={<Apropos />} />
+          <Route path="/404" element={<Erreur />} />
+          <Route
+            path="/ContentCard/:id"
+            element={<ContentCard Donnees={Donnees} />}
+          />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 
