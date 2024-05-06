@@ -1,39 +1,32 @@
 import React from "react";
 import { useState } from "react";
 import arrow from "../assets/arrow.svg";
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 
-const Accordeon = () => {
-  const [open, setOpen] = useState(false);
+const Accordeon = ({ title, content }) => {
+  const [active, setActive] = useState(false);
+  const open = (e) => {
+    setActive(!active);
+    console.log(e);
+  };
   return (
     <div className="container">
-      <div className="bulle">
-        <p>Fiabilité</p>
-        <button
-          className="button"
-          onClick={() => {
-            setOpen(!open);
-            console.log(open);
-          }}
-        >
+      <div className="accordeon__title">
+        {title}
+        <span onClick={open}>
           <img
             className="arrow"
             src={arrow}
-            alt="arrow"
+            alt="Flèche cliquable"
             style={{
-              transform: !open ? "rotate(0deg)" : "rotate(-180deg)",
+              transform: !active ? "rotate(-180deg)" : "rotate(0deg)",
               transition: "transform 0.5s ease",
             }}
           />
-        </button>
-      </div>{" "}
-      <div>
-        <p className={open ? "anim" : "animation"}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt
-          laudantium optio ipsum ipsam itaque labore harum repudiandae enim, ut
-          nemo odit? Commodi nesciunt architecto aut doloribus dolor
-          reprehenderit impedit autem?
-        </p>
+        </span>
+      </div>
+      <div className={active ? "invisible" : "accordeon__content"}>
+        {content}
       </div>
     </div>
   );
