@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/Apropos" element={<Apropos />} />
-          <Route path="/404" element={<Erreur />} />
+          <Route path="*" element={<Erreur />} />
           <Route
             path="/ContentCard/:id"
             element={<ContentCard Donnees={Donnees} />}

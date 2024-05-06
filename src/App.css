@@ -23,10 +23,6 @@
   width: 20%;
 }
 
-/* .ligne {
-  text-decoration: underline;
-} */
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -105,6 +101,23 @@
   height: 415px;
   border-radius: 25px;
   overflow: hidden;
+  position: relative;
+}
+.pass {
+  position: absolute;
+}
+
+.one {
+  rotate: 90deg;
+  height: 100px;
+  right: 10px;
+  bottom: 40%;
+}
+.two {
+  rotate: -90deg;
+  height: 100px;
+  left: 10px;
+  bottom: 40%;
 }
 .car {
   width: 100%;
@@ -206,11 +219,13 @@
   display: flex;
   justify-content: center;
   margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
 }
 .bulle {
   display: flex;
   flex-direction: row;
-  height: 70px;
+  /* height: 70px; */
   width: 100%;
   background-color: #ff6060;
   color: white;
@@ -219,6 +234,7 @@
   justify-content: space-between;
   font-size: 24px;
   font-weight: 700;
+  transition: opacity 0.5s ease-in-out, margin 0.5s ease-in-out;
 }
 
 .button {
@@ -232,6 +248,45 @@
   width: 32px;
   height: 32px;
 }
+.anim {
+  animation: down 1s forwards;
+  padding: 20px 0px 10px 20px;
+  margin: 0;
+  opacity: 1;
+  z-index: -1;
+  visibility: visible;
+}
+
+.animation {
+  animation: up 1s forwards;
+  padding: 20px 0px 10px 20px;
+  opacity: 0;
+  z-index: -1;
+  visibility: collapse;
+}
+
+@keyframes down {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes up {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+
 /* // style apropos^ */
 .error {
   font-size: 288px;

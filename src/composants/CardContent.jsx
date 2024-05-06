@@ -1,18 +1,37 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
+import arrow from "../assets/arrow.svg";
+import { useState } from "react";
 
 const ContentCard = ({ Donnees }) => {
   const { id } = useParams();
-
   const Datafiltered = Donnees.filter((item) => ":" + item.id === id);
+  const [slide, setSlide] = useState([Datafiltered[0].pictures]);
 
-  console.log(Datafiltered);
+  function Next() {
+    slide[0];
+  }
+
+  // console.log(Datafiltered);
+  console.log(slide);
+  // console.log(Datafiltered[0].pictures);
   return (
     <div>
       <Navbar />
       <div className="caroussel">
-        <img src={Datafiltered[0].cover} alt="" className="car" />
+        <img
+          className="pass one"
+          src={arrow}
+          alt="arrow"
+          onClick={() => {
+            Next();
+          }}
+        />
+        <img className="pass two" src={arrow} alt="arrow" />
+        {Datafiltered[0].pictures.map((img, index) => {
+          return <img src={img} key={index} alt="" className="car" />;
+        })}
       </div>
 
       <section className="content">

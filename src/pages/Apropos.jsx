@@ -10,6 +10,9 @@ const Apropos = () => {
       <Navbar />
       <Header Image={MontagneDeux} Texte={""} />
       <Accordeon />
+      <Accordeon />
+      <Accordeon />
+      <Accordeon />
     </div>
   );
 };
