@@ -19,13 +19,13 @@ const Accordeon = ({ title, content }) => {
             src={arrow}
             alt="Flèche cliquable"
             style={{
-              transform: !active ? "rotate(-180deg)" : "rotate(0deg)",
+              transform: !active ? "rotate(0deg)" : "rotate(-180deg)",
               transition: "transform 0.5s ease",
             }}
           />
         </span>
       </div>
-      <div className={active ? "invisible" : "accordeon__content"}>
+      <div className={!active ? "invisible" : "accordeon__content"}>
         {content}
       </div>
     </div>

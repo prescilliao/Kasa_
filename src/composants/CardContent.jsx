@@ -4,31 +4,29 @@ import { useParams } from "react-router-dom";
 import arrow from "../assets/arrow.svg";
 import { useState } from "react";
 import Accordeon from "./Accordeon";
+import star from "../assets/star.svg";
+// import pinkstar from "../assets/pinkstar.svg";
+import Etoile from "./Etoile";
+import Carroussel from "./Caroussel";
 
 const ContentCard = ({ Donnees }) => {
   const { id } = useParams();
   const Datafiltered = Donnees.filter((item) => ":" + item.id === id);
   const [slide, setSlide] = useState([Datafiltered[0].pictures]);
-
-  // function Next() {
-  //   slide[0];
-  // }
-
-  // console.log(Datafiltered);
-  console.log(slide);
-  // console.log(Datafiltered[0].pictures);
+  const numberEtoile = Datafiltered[0].rating;
+  function AfficheEtoile(numberEtoile) {
+    let stars = [];
+    for (let i = 0; i < numberEtoile; i++) {
+      stars.push(<Etoile key={i} />);
+    }
+    return stars;
+  }
+  const Galaxie = AfficheEtoile(numberEtoile);
   return (
     <div>
       <Navbar />
       <div className="caroussel">
-        {/* <img
-          className="pass one"
-          src={arrow}
-          alt="arrow"
-          onClick={() => {
-            Next();
-          }} */}
-        {/* /> */}
+        <img className="pass one" src={arrow} alt="arrow" onClick={() => {}} />
         <img className="pass two" src={arrow} alt="arrow" />
         {Datafiltered[0].pictures.map((img, index) => {
           return <img src={img} key={index} alt="" className="car" />;
@@ -64,7 +62,12 @@ const ContentCard = ({ Donnees }) => {
           </div>
 
           <div className="etoile">
-            <p className="star">{Datafiltered[0].rating}/5 étoiles</p>
+            <img src={star} alt="étoile" />
+            <img src={star} alt="étoile" />
+            <img src={star} alt="étoile" />
+            <img src={star} alt="étoile" />
+            <img src={star} alt="étoile" />
+            <div className="pinkstar">{Galaxie}</div>
           </div>
         </div>
       </section>
