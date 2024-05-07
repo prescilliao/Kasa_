@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 const Navbar = () => {
@@ -8,14 +8,14 @@ const Navbar = () => {
       <img className="logo" src={logo} alt="Logo" />
       <ul className="lien">
         <li>
-          <Link className="a " to="/">
+          <NavLink className="a" to="/">
             Accueil
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className="a" to="/Apropos">
+          <NavLink className="a" to="/Apropos">
             A propos
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>

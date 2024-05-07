@@ -14,11 +14,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/Apropos" element={<Apropos />} />
-          <Route path="*" element={<Erreur />} />
           <Route
             path="/ContentCard/:id"
             element={<ContentCard Donnees={Donnees} />}
           />
+          <Route path="*" element={<Erreur />} />
         </Routes>
       </div>
       <Footer />

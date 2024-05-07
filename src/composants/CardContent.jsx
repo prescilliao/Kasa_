@@ -5,7 +5,6 @@ import arrow from "../assets/arrow.svg";
 import { useState } from "react";
 import Accordeon from "./Accordeon";
 import star from "../assets/star.svg";
-// import pinkstar from "../assets/pinkstar.svg";
 import Etoile from "./Etoile";
 import Carroussel from "./Caroussel";
 
