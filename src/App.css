@@ -1,3 +1,7 @@
+#root {
+  padding: 0;
+  margin: 0;
+}
 .color {
   color: #ff6060;
 }
@@ -8,10 +12,12 @@
   font-size: 24px;
   font-weight: 500;
 }
-
+.active {
+  text-decoration: underline;
+}
 .font {
   font-family: "Montserrat";
-  padding: 0% 5%;
+  margin: 0% 5%;
 }
 
 .lien {
@@ -203,7 +209,12 @@
   gap: 5px;
   position: relative;
 }
-
+.icone {
+  width: 25px;
+}
+.rose {
+  width: 25px;
+}
 .star {
   color: #ff6060;
 }
@@ -213,6 +224,8 @@
   left: 0px;
   display: flex;
   gap: 5px;
+  width: 25px;
+  height: 24px;
 }
 .decrypt {
   display: flex;
@@ -301,6 +314,7 @@
   font-size: 36px;
   font-weight: 500;
   display: flex;
+  text-align: center;
   justify-content: center;
   margin: 60px 0px;
 }
@@ -329,3 +343,177 @@
   font-size: 24px;
 }
 /* // style footer ^ */
+
+/* --------- */
+
+/* media query */
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 25px;
+  }
+  .cards {
+    height: 240px;
+  }
+  .error {
+    font-size: 280px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .a {
+    font-size: 20px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .lien {
+    gap: 15px;
+  }
+  .header {
+    height: 115px;
+  }
+
+  .text {
+    width: 90%;
+    font-size: 24px;
+    transform: translate(-45%, -50%);
+    text-wrap: wrap;
+  }
+  .section {
+    background-color: white;
+    padding: 0px;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  .cards {
+    width: 100%;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .caroussel {
+    height: 370px;
+  }
+  .one {
+    height: 70px;
+  }
+  .two {
+    height: 70px;
+  }
+  .proprio {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  .icone {
+    width: 25px;
+  }
+  .pinkstar {
+    top: 35px;
+  }
+
+  .txtFoot {
+    font-size: 12px;
+  }
+  .txterror {
+    font-size: 28px;
+  }
+  .error {
+    font-size: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .a {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .logo {
+    height: 45px;
+  }
+  .lien {
+    gap: 10px;
+  }
+  .caroussel {
+    height: 250px;
+  }
+
+  .one {
+    height: 30px;
+    bottom: 45%;
+  }
+  .two {
+    height: 30px;
+    bottom: 45%;
+  }
+  .content {
+    margin-top: 20px;
+  }
+  .titreOne {
+    font-size: 18px;
+  }
+  .titreTwo {
+    font-size: 14px;
+  }
+  .categorie {
+    flex-wrap: wrap;
+  }
+  .categ {
+    font-size: 12px;
+    padding: 0px 20px;
+    height: 25px;
+  }
+  .etoile {
+    gap: 10px;
+    font-size: 25px;
+  }
+  .icone {
+    width: 20px;
+  }
+  .rose {
+    width: 20px;
+  }
+  .pinkstar {
+    top: 13px;
+    gap: 10px;
+  }
+  .infoproprio {
+    margin-bottom: 0px;
+  }
+  .name {
+    font-size: 12px;
+  }
+  .face {
+    height: 45px;
+    width: 45px;
+  }
+  .decrypt {
+    flex-direction: column;
+  }
+  .complete {
+    width: 100%;
+  }
+  .loot {
+    width: 100%;
+  }
+  .accordeon__title {
+    font-size: 13px;
+  }
+  .accordeon__content {
+    font-size: 12px;
+  }
+  .arrow {
+    height: 20px;
+    width: 20px;
+  }
+  .txterror {
+    font-size: 18px;
+  }
+  .error {
+    font-size: 100px;
+  }
+  .linkError {
+    font-size: 14px;
+  }
+}

@@ -4,7 +4,7 @@ import pinkstar from "../assets/pinkstar.svg";
 function Etoile() {
   return (
     <div>
-      <img src={pinkstar} alt="étoile" />
+      <img src={pinkstar} alt="étoile" className="rose" />
     </div>
   );
 }

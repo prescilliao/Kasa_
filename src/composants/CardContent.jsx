@@ -61,11 +61,11 @@ const ContentCard = ({ Donnees }) => {
           </div>
 
           <div className="etoile">
-            <img src={star} alt="étoile" />
-            <img src={star} alt="étoile" />
-            <img src={star} alt="étoile" />
-            <img src={star} alt="étoile" />
-            <img src={star} alt="étoile" />
+            <img className="icone" src={star} alt="étoile" />
+            <img className="icone" src={star} alt="étoile" />
+            <img className="icone" src={star} alt="étoile" />
+            <img className="icone" src={star} alt="étoile" />
+            <img className="icone" src={star} alt="étoile" />
             <div className="pinkstar">{Galaxie}</div>
           </div>
         </div>
