@@ -15,9 +15,9 @@ import Donnees from "./data.json";
 
 function App() {
   let { id } = useParams();
-  console.log(id);
+
   const nb = Donnees.map((donnee) => donnee.id);
-  console.log(nb);
+
   const IsValid = (id) => {
     return Donnees.some((data) => data.id === parseInt(id));
   };

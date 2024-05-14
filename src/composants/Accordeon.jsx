@@ -7,7 +7,6 @@ const Accordeon = ({ title, content }) => {
   const [active, setActive] = useState(false);
   const open = (e) => {
     setActive(!active);
-    console.log(e);
   };
   return (
     <div className="container">

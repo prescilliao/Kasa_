@@ -5,7 +5,7 @@ import ContentCard from "./CardContent";
 const Card = ({ Data }) => {
   return (
     <div className="cards">
-      <Link to={`/ContentCard/:${Data.id}`}>
+      <Link to={`/ContentCard/${Data.id}`}>
         <img className="cards img" src={Data.cover} alt="" />
         <p className="card">{Data.title}</p>
       </Link>
