@@ -1,6 +1,7 @@
 #root {
   padding: 0;
-  margin: 0;
+  margin: auto;
+  max-width: 1240px;
 }
 .color {
   color: #ff6060;
@@ -393,7 +394,7 @@
   .content {
     flex-direction: column;
   }
-  .caroussel {
+  .box {
     height: 370px;
   }
   .one {
@@ -435,11 +436,12 @@
   .lien {
     gap: 10px;
   }
-  .caroussel {
-    height: 250px;
+  .box {
+    height: 195px;
   }
+
   .cards {
-    height: 190px;
+    height: 210px;
   }
   .one {
     height: 30px;

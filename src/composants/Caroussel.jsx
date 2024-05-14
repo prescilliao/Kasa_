@@ -5,19 +5,20 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 
 function Caroussel({ children }) {
-  const [slide, setSlide] = useState(0);
+  const [current, setCurrent] = useState(0);
   const Suivant = () =>
-    setSlide((slide) => (slide === children.lenght - 1 ? 0 : slide + 1));
+    setCurrent((curr) => (curr === children.length - 1 ? 0 : curr + 1));
 
   const Precedent = () =>
-    setSlide((slide) => (slide === 0 ? children.lenght - 1 : slide - 1));
+    setCurrent((curr) => (curr === 0 ? children.length - 1 : curr - 1));
 
   return (
     <div className="box">
       <div
         style={{
-          transform: `translateX(-${slide * 100}%)`,
+          transform: `translateX(-${current * 100}%)`,
           display: `flex`,
+          transition: `transform 1s`,
         }}
       >
         {children}
