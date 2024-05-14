@@ -1,5 +1,11 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useParams,
+} from "react-router-dom";
 import Accueil from "./pages/Acceuil";
 import Apropos from "./pages/Apropos";
 import Erreur from "./pages/Erreur";
@@ -8,6 +14,22 @@ import ContentCard from "./composants/CardContent";
 import Donnees from "./data.json";
 
 function App() {
+  let { id } = useParams();
+  console.log(id);
+  const nb = Donnees.map((donnee) => donnee.id);
+  console.log(nb);
+  const IsValid = (id) => {
+    return Donnees.some((data) => data.id === parseInt(id));
+  };
+  const ContentCardRoute = ({ id }) => {
+    return IsValid(id) ? (
+      <Navigate to="/erreur" />
+    ) : (
+      <ContentCard Donnees={Donnees} />
+
+      // <ContentCard Donnees={Donnees} />
+    );
+  };
   return (
     <Router>
       <div className="font">
@@ -16,8 +38,9 @@ function App() {
           <Route path="/Apropos" element={<Apropos />} />
           <Route
             path="/ContentCard/:id"
-            element={<ContentCard Donnees={Donnees} />}
+            element={<ContentCardRoute Donnees={Donnees} />}
           />
+          <Route path="/erreur" element={<Erreur />} />
           <Route path="*" element={<Erreur />} />
         </Routes>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 function Caroussel() {
-  return <div>Caroussel</div>;
+  return <div></div>;
 }
 
 export default Caroussel;

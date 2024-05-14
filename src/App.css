@@ -438,7 +438,9 @@
   .caroussel {
     height: 250px;
   }
-
+  .cards {
+    height: 190px;
+  }
   .one {
     height: 30px;
     bottom: 45%;
