@@ -4,24 +4,25 @@ import arrow from "../assets/arrow.svg";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
-function Caroussel({ children }) {
+function Caroussel({ pictures }) {
   const [current, setCurrent] = useState(0);
   const Suivant = () =>
-    setCurrent((curr) => (curr === children.length - 1 ? 0 : curr + 1));
+    setCurrent((curr) => (curr === pictures.length - 1 ? 0 : curr + 1));
 
   const Precedent = () =>
-    setCurrent((curr) => (curr === 0 ? children.length - 1 : curr - 1));
-
+    setCurrent((curr) => (curr === 0 ? pictures.length - 1 : curr - 1));
+  if (pictures.length < 2) {
+    return (
+      <div className="box">
+        <img src={pictures[current]} alt="" className="car" />
+      </div>
+    );
+  }
   return (
     <div className="box">
-      <div
-        style={{
-          transform: `translateX(-${current * 100}%)`,
-          display: `flex`,
-          transition: `transform 1s`,
-        }}
-      >
-        {children}
+      <img src={pictures[current]} alt="" className="car" />
+      <div className="number_carroussel">
+        {current + 1}/{pictures.length}
       </div>
       <div>
         <img
@@ -29,7 +30,7 @@ function Caroussel({ children }) {
           src={arrow}
           alt="arrow"
           onClick={() => {
-            Suivant(console.log("ok"));
+            Suivant();
           }}
         />
         <img

@@ -33,11 +33,7 @@ const ContentCard = ({ Donnees }) => {
   return (
     <div>
       <Navbar />
-      <Carroussel>
-        {Datafiltered[0].pictures.map((img, index) => {
-          return <img src={img} key={index} alt="" className="car" />;
-        })}
-      </Carroussel>
+      <Carroussel pictures={Datafiltered[0].pictures} />
 
       <section className="content">
         <div className="infocard">
