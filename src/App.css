@@ -79,14 +79,14 @@
   flex-wrap: wrap;
   row-gap: 20px;
   padding: 50px;
-  gap: 50px;
+  gap: 30px;
   justify-content: flex-start;
 }
 /* //  accueil ^ */
 .cards {
   position: relative;
   height: 300px;
-  width: 30%;
+  width: 31%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -382,6 +382,11 @@
 /* --------- */
 
 /* media query */
+@media screen and (max-width: 1065px) {
+  .section {
+    gap: 25px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .section {
     padding: 25px;
@@ -496,6 +501,12 @@
   }
   .categorie {
     flex-wrap: wrap;
+  }
+  .car {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
   }
   .categ {
     font-size: 12px;
