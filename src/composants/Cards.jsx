@@ -6,7 +6,10 @@ const Card = ({ Data }) => {
   return (
     <div className="cards">
       <Link to={`/ContentCard/${Data.id}`}>
-        <img className="cards img" src={Data.cover} alt="" />
+        <div className="image-container">
+          <img className="cards img" src={Data.cover} alt="" />
+          <div className="shadow-box"></div>
+        </div>
         <p className="card">{Data.title}</p>
       </Link>
     </div>

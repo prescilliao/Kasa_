@@ -1,19 +1,14 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { useParams, Navigate } from "react-router-dom";
-import arrow from "../assets/arrow.svg";
-import { useEffect } from "react";
-import { useState } from "react";
 import Accordeon from "./Accordeon";
 import star from "../assets/star.svg";
 import Etoile from "./Etoile";
-import Erreur from "../pages/Erreur";
 import Carroussel from "./Caroussel";
 
 const ContentCard = ({ Donnees }) => {
   const { id } = useParams();
   const Datafiltered = Donnees.filter((item) => item.id === id);
-  // const [slide, setSlide] = useState([Datafiltered[0].pictures]);
   const valid = Datafiltered.length > 0;
 
   const numberEtoile = valid ? Datafiltered[0].rating : 0;
