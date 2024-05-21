@@ -363,6 +363,13 @@
   align-items: center;
   flex-direction: column;
   padding-top: 30px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
 }
 
 .txtFoot {
