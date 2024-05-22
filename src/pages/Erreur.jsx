@@ -13,7 +13,7 @@ const Erreur = () => {
         Oups! La page que vous demandez n'existe pas.
       </div>
       <Link className="linkError" to="/">
-        Retouner a la page d'acceuil
+        Retourner a la page d'acceuil
       </Link>
     </div>
   );
