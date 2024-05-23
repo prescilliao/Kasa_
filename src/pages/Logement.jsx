@@ -1,18 +1,21 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../composants/Navbar";
 import { useParams, Navigate } from "react-router-dom";
-import Accordeon from "./Accordeon";
+import Accordeon from "../composants/Accordeon";
 import star from "../assets/star.svg";
-import Etoile from "./Etoile";
-import Carroussel from "./Caroussel";
+import Etoile from "../composants/Etoile";
+import Carroussel from "../composants/Caroussel";
+import Donnees from "../data.json";
 
-const ContentCard = ({ Donnees }) => {
+const Logement = () => {
   const { id } = useParams();
   const Datafiltered = Donnees.filter((item) => item.id === id);
   const valid = Datafiltered.length > 0;
 
   const numberEtoile = valid ? Datafiltered[0].rating : 0;
-
+  if (!valid) {
+    return <Navigate to="/erreur" />;
+  }
   function AfficheEtoile(numberEtoile) {
     let stars = [];
     for (let i = 0; i < numberEtoile; i++) {
@@ -22,9 +25,6 @@ const ContentCard = ({ Donnees }) => {
   }
   const Galaxie = AfficheEtoile(numberEtoile);
 
-  if (!valid) {
-    return <Navigate to="/erreur" />;
-  }
   return (
     <div>
       <Navbar />
@@ -88,4 +88,4 @@ const ContentCard = ({ Donnees }) => {
   );
 };
 
-export default ContentCard;
+export default Logement;

@@ -10,7 +10,7 @@ import Accueil from "./pages/Acceuil";
 import Apropos from "./pages/Apropos";
 import Erreur from "./pages/Erreur";
 import Footer from "./composants/Footer";
-import ContentCard from "./composants/CardContent";
+import Logement from "./pages/Logement";
 import Donnees from "./data.json";
 
 function App() {
@@ -18,28 +18,13 @@ function App() {
 
   const nb = Donnees.map((donnee) => donnee.id);
 
-  const IsValid = (id) => {
-    return Donnees.some((data) => data.id === parseInt(id));
-  };
-  const ContentCardRoute = ({ id }) => {
-    return IsValid(id) ? (
-      <Navigate to="/erreur" />
-    ) : (
-      <ContentCard Donnees={Donnees} />
-
-      // <ContentCard Donnees={Donnees} />
-    );
-  };
   return (
     <Router>
       <div className="font">
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/Apropos" element={<Apropos />} />
-          <Route
-            path="/ContentCard/:id"
-            element={<ContentCardRoute Donnees={Donnees} />}
-          />
+          <Route path="/Logement/:id" element={<Logement />} />
           <Route path="/erreur" element={<Erreur />} />
           <Route path="*" element={<Erreur />} />
         </Routes>

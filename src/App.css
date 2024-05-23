@@ -123,6 +123,10 @@
 }
 
 /* // Card accueil^ */
+.padding {
+  padding: 0px 60px;
+}
+/* style a propos */
 
 .box {
   height: 415px;
@@ -269,7 +273,7 @@
   width: 45%;
   list-style: none;
 }
-/* // style ContentCard ^ */
+/* // style Logement ^ */
 
 .container {
   display: flex;
@@ -356,6 +360,7 @@
 /* style page erreur */
 
 .footer {
+  max-width: 1240px;
   background-color: black;
   color: white;
   display: flex;
